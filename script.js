@@ -10,9 +10,48 @@ var controller = Leap.loop({enableGestures: true}, function(frame){
         if(gesture.direction[0]>0){
           console.log('left');
         } else {
-          console.log('right')
+          console.log('right');
         }
       }
     });
   }
 });
+
+
+function loadjscssfile(filename, filetype){
+ if (filetype=="js"){ //if filename is a external JavaScript file
+  var fileref=document.createElement('script')
+  fileref.setAttribute("type","text/javascript")
+  fileref.setAttribute("src", filename)
+ }
+ else if (filetype=="css"){ //if filename is an external CSS file
+  var fileref=document.createElement("link")
+  fileref.setAttribute("rel", "stylesheet")
+  fileref.setAttribute("type", "text/css")
+  fileref.setAttribute("href", filename)
+ }
+ if (typeof fileref!="undefined")
+  document.getElementsByTagName("head")[0].appendChild(fileref)
+}
+
+document.onclick = function() {
+  console.log("hi");
+
+    $('body').append('<div id="test"></div>');
+  $.get(chrome.extension.getURL("prototype/sidebar.html"), function(data){
+
+    $('#test').html(data);
+
+    loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap.css"), "css");
+    loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap-reset.css"), "css");
+    loadjscssfile(chrome.extension.getURL("prototype/assets/font-awesome/css/font-awesome.css"), "css");
+    loadjscssfile(chrome.extension.getURL("prototype/css/navbar-fixed-top.css"), "css");
+    loadjscssfile(chrome.extension.getURL("prototype/css/style.css"), "css");
+    loadjscssfile(chrome.extension.getURL("prototype/css/style-responsive.css"), "css");
+    
+    loadjscssfile(chrome.extension.getURL("prototype/js/jquery.js"), "js");
+    loadjscssfile(chrome.extension.getURL("prototype/js/bootstrap.min.js"), "js");
+  });
+};
+
+
