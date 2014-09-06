@@ -23,13 +23,10 @@ $(document).ready(function(){
     loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap-reset.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/assets/font-awesome/css/font-awesome.css"), "css");
-    loadjscssfile(chrome.extension.getURL("prototype/css/navbar-fixed-top.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/css/style.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/css/style-responsive.css"), "css");
-
-    loadjscssfile(chrome.extension.getURL("prototype/js/jquery.js"), "js");
-    loadjscssfile(chrome.extension.getURL("prototype/js/bootstrap.min.js"), "js");
   });
+  $('#notifymecontainer').hide();
 });
 
 var controller = Leap.loop({enableGestures: true}, function(frame){
@@ -39,13 +36,12 @@ var controller = Leap.loop({enableGestures: true}, function(frame){
       var isVertical = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
       if(isVertical){
 
-        if(Math.abs(gesture.direction[0])<0.75)return;
+        if(Math.abs(gesture.direction[0])<0.10)return;
 
         if(gesture.direction[0]>0){
-          console.log('left');
-          
+          $('#notifymecontainer').show({duration:400});
         } else {
-          console.log('right');
+          $('#notifymecontainer').hide({duration:400});
         }
       }
     });
