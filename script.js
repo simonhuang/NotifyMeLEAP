@@ -14,6 +14,23 @@ function loadjscssfile(filename, filetype){
   document.getElementsByTagName("head")[0].appendChild(fileref)
 }
 
+$(document).ready(function(){
+  $.get(chrome.extension.getURL("prototype/sidebar.html"), function(data){
+
+    $('body').append('<section id="notifymecontainer" class="notify-me-leap"></section>');
+    $('#notifymecontainer.notify-me-leap').html(data);
+
+    loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap.css"), "css");
+    loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap-reset.css"), "css");
+    loadjscssfile(chrome.extension.getURL("prototype/assets/font-awesome/css/font-awesome.css"), "css");
+    loadjscssfile(chrome.extension.getURL("prototype/css/navbar-fixed-top.css"), "css");
+    loadjscssfile(chrome.extension.getURL("prototype/css/style.css"), "css");
+    loadjscssfile(chrome.extension.getURL("prototype/css/style-responsive.css"), "css");
+
+    loadjscssfile(chrome.extension.getURL("prototype/js/jquery.js"), "js");
+    loadjscssfile(chrome.extension.getURL("prototype/js/bootstrap.min.js"), "js");
+  });
+});
 
 var controller = Leap.loop({enableGestures: true}, function(frame){
   if (frame.valid && frame.gestures.length > 0){
@@ -26,20 +43,7 @@ var controller = Leap.loop({enableGestures: true}, function(frame){
 
         if(gesture.direction[0]>0){
           console.log('left');
-          $.get(chrome.extension.getURL("prototype/sidebar.html"), function(data){
-
-            $('#test').html(data);
-
-            loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap.css"), "css");
-            loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap-reset.css"), "css");
-            loadjscssfile(chrome.extension.getURL("prototype/assets/font-awesome/css/font-awesome.css"), "css");
-            loadjscssfile(chrome.extension.getURL("prototype/css/navbar-fixed-top.css"), "css");
-            loadjscssfile(chrome.extension.getURL("prototype/css/style.css"), "css");
-            loadjscssfile(chrome.extension.getURL("prototype/css/style-responsive.css"), "css");
-
-            loadjscssfile(chrome.extension.getURL("prototype/js/jquery.js"), "js");
-            loadjscssfile(chrome.extension.getURL("prototype/js/bootstrap.min.js"), "js");
-          });
+          
         } else {
           console.log('right');
         }
@@ -50,22 +54,6 @@ var controller = Leap.loop({enableGestures: true}, function(frame){
 
 document.onclick = function() {
   console.log("hi");
-
-    $('body').append('<div id="test"></div>');
-  $.get(chrome.extension.getURL("prototype/sidebar.html"), function(data){
-
-    $('#test').html(data);
-
-    loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap.css"), "css");
-    loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap-reset.css"), "css");
-    loadjscssfile(chrome.extension.getURL("prototype/assets/font-awesome/css/font-awesome.css"), "css");
-    loadjscssfile(chrome.extension.getURL("prototype/css/navbar-fixed-top.css"), "css");
-    loadjscssfile(chrome.extension.getURL("prototype/css/style.css"), "css");
-    loadjscssfile(chrome.extension.getURL("prototype/css/style-responsive.css"), "css");
-
-    loadjscssfile(chrome.extension.getURL("prototype/js/jquery.js"), "js");
-    loadjscssfile(chrome.extension.getURL("prototype/js/bootstrap.min.js"), "js");
-  });
 };
 
 

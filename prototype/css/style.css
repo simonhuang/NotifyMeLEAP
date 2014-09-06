@@ -1,13 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
 
 
-.notify-me-leap#container {
+.notify-me-leap#notifymecontainer {
   font-size: 13px;
   font-family: 'Open Sans', sans-serif;
   max-width: 350px;
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
   background: #f1f2f7;
+  top:0;
+  position:fixed;
+  z-index:2147483647;
 }
 .notify-me-leap ul li {
   list-style: none;
@@ -25,7 +28,7 @@
   color: #fff;
 }
 .notify-me-leap #main-content {
-  margin-left: 210px;
+  margin-left: 0px;
 }
 .notify-me-leap .header, .notify-me-leap .footer {
   min-height: 60px;
@@ -42,7 +45,6 @@
   margin-top: 50px;
   display: inline-block;
   padding: 15px;
-  width: 100%;
 }
 .notify-me-leap p.logo {
   font-size: 21px;
