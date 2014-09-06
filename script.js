@@ -20,6 +20,7 @@ $(document).ready(function(){
     $('body').append('<section id="notifymecontainer" class="notify-me-leap"></section>');
     $('#notifymecontainer.notify-me-leap').html(data);
 
+    loadjscssfile(chrome.extension.getURL("prototype/css/reset.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap-reset.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/assets/font-awesome/css/font-awesome.css"), "css");
