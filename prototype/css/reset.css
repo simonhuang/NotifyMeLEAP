@@ -1,0 +1,80 @@
+
+#notify-me-leap html, #notify-me-leap body, #notify-me-leap div, #notify-me-leap span, #notify-me-leap object, #notify-me-leap iframe,
+#notify-me-leap h1, #notify-me-leap h2, #notify-me-leap h3, #notify-me-leap h4, #notify-me-leap h5, #notify-me-leap h6, #notify-me-leap p, #notify-me-leap blockquote, #notify-me-leap pre,
+#notify-me-leap abbr, #notify-me-leap address, #notify-me-leap cite, #notify-me-leap code,
+#notify-me-leap del, #notify-me-leap dfn, #notify-me-leap em, #notify-me-leap img, #notify-me-leap ins, #notify-me-leap kbd, #notify-me-leap q, #notify-me-leap samp,
+#notify-me-leap small, #notify-me-leap strong, #notify-me-leap sub, #notify-me-leap sup, #notify-me-leap var,
+#notify-me-leap b, #notify-me-leap i,
+#notify-me-leap dl, #notify-me-leap dt, #notify-me-leap dd, #notify-me-leap ol, #notify-me-leap ul, #notify-me-leap li,
+#notify-me-leap fieldset, #notify-me-leap form, #notify-me-leap label, #notify-me-leap legend,
+#notify-me-leap table, #notify-me-leap caption, #notify-me-leap tbody, #notify-me-leap tfoot, #notify-me-leap thead, #notify-me-leap tr, #notify-me-leap th, #notify-me-leap td,
+#notify-me-leap article, #notify-me-leap aside, #notify-me-leap canvas, #notify-me-leap details, #notify-me-leap figcaption, #notify-me-leap figure,
+#notify-me-leap footer, #notify-me-leap header, #notify-me-leap hgroup, #notify-me-leap menu, #notify-me-leap nav, #notify-me-leap section, #notify-me-leap summary,
+#notify-me-leap time, #notify-me-leap mark, #notify-me-leap audio, #notify-me-leap video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-align: left;
+}
+#notify-me-leap body {
+  line-height: 1;
+}
+#notify-me-leap article, #notify-me-leap aside, #notify-me-leap details, #notify-me-leap figcaption, #notify-me-leap figure,
+#notify-me-leap footer, #notify-me-leap header, #notify-me-leap hgroup, #notify-me-leap menu, #notify-me-leap nav, #notify-me-leap section {
+  display: block;
+}
+#notify-me-leap nav ul {
+  list-style: none;
+}
+#notify-me-leap blockquote, #notify-me-leap q {
+  quotes: none;
+}
+#notify-me-leap blockquote:before, #notify-me-leap blockquote:after,
+#notify-me-leap q:before, #notify-me-leap q:after {
+  content: '';
+  content: none;
+}
+#notify-me-leap a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+#notify-me-leap ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+#notify-me-leap mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+#notify-me-leap del {
+  text-decoration: line-through;
+}
+#notify-me-leap abbr[title], #notify-me-leap dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+#notify-me-leap table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#notify-me-leap hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+#notify-me-leap input, #notify-me-leap select {
+  vertical-align: middle;
+}
