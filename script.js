@@ -16,7 +16,7 @@ function loadjscssfile(filename, filetype){
 
 $(document).ready(function(){
   $.get(chrome.extension.getURL("prototype/sidebar.html"), function(data){
-    $('body').append('<div id="notify-me-toggle-bttn" style="position:fixed; top:0; left:0; height:16px; width:16px; background-image:url(\'http://files.softicons.com/download/toolbar-icons/fugue-16px-icons-by-yusuke-kamiyamane/png/16x16/toggle-expand.png\'); opacity: 0; cursor:pointer; z-index:2147483647;"></div>');
+    $('body').append('<div id="notify-me-toggle-bttn" style="position:fixed; top:1px; left:1px; height:16px; width:16px; background-image:url(\'http://i.imgur.com/dxeSGQf.png\'); background-size: 100% 100%; opacity: 0; cursor:pointer; z-index:2147483647;"></div>');
     $('body').append('<section id="notifymecontainer" class="notify-me-leap"></section>');
     $('#notifymecontainer.notify-me-leap').html(data);
     $('#notifymecontainer').hide();
@@ -37,9 +37,11 @@ $(document).ready(function(){
     $('#notify-me-toggle-bttn').click(function() {
       if ($('#notifymecontainer').is(':visible')) {
         $('#notifymecontainer').hide({duration:400});
+        $('#notify-me-toggle-bttn').css('background-image','url(\'http://i.imgur.com/dxeSGQf.png\')');
       }
       else {
         $('#notifymecontainer').show({duration:400});
+        $('#notify-me-toggle-bttn').css('background-image','url(\'http://i.imgur.com/mKjOXZU.png\')');
       }
     });
     getNews();
