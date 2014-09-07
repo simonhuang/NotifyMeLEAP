@@ -15,6 +15,7 @@ function loadjscssfile(filename, filetype){
 }
 
 $(document).ready(function(){
+  $count = 0;
   $.get(chrome.extension.getURL("prototype/sidebar.html"), function(data){
 
     $('body').append('<section id="notifymecontainer" class="notify-me-leap"></section>');
@@ -51,6 +52,11 @@ var controller = Leap.loop({enableGestures: true}, function(frame){
 
 document.onclick = function() {
   console.log("hi");
+  $count++;
+  if ($count % 2 == 1)
+    $('#notifymecontainer').show({duration:400});
+  else
+    $('#notifymecontainer').hide({duration:400});
 };
 
 
