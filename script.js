@@ -15,12 +15,10 @@ function loadjscssfile(filename, filetype){
 }
 
 $(document).ready(function(){
-  $count = 0;
   $.get(chrome.extension.getURL("prototype/sidebar.html"), function(data){
-
+    $('body').append('<div id="notify-me-toggle-bttn" style="position:fixed; top:0; left:0; height:16px; width:16px; background-color:green; opacity: 0; z-index:2147483647;"></div>');
     $('body').append('<section id="notifymecontainer" class="notify-me-leap"></section>');
     $('#notifymecontainer.notify-me-leap').html(data);
-
     $('#notifymecontainer').hide();
 
     loadjscssfile(chrome.extension.getURL("prototype/css/reset.css"), "css");
@@ -29,6 +27,22 @@ $(document).ready(function(){
     loadjscssfile(chrome.extension.getURL("prototype/assets/font-awesome/css/font-awesome.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/css/style.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/css/style-responsive.css"), "css");
+
+    $('#notify-me-toggle-bttn').hover(function() {
+        $(this).fadeTo(1,1);
+    },function() {
+        $(this).fadeTo(1,0);
+    });
+
+    $('#notify-me-toggle-bttn').click(function() {
+      if ($('#notifymecontainer').is(':visible')) {
+        $('#notifymecontainer').hide({duration:400});
+      }
+      else {
+        $('#notifymecontainer').show({duration:400});
+      }
+    });
+
   });
 
 });
@@ -53,14 +67,3 @@ var controller = Leap.loop({enableGestures: true}, function(frame){
     });
   }
 });
-
-document.onclick = function() {
-  console.log("hi");
-  $count++;
-  if ($count % 2 == 1)
-    $('#notifymecontainer').show({duration:400});
-  else
-    $('#notifymecontainer').hide({duration:400});
-};
-
-
