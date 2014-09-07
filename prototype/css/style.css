@@ -11,6 +11,12 @@
   position:fixed;
   z-index:2147483647;
 }
+
+
+#notifymecontainer .col-lg-12{
+  width: 300px;
+}
+
 .notify-me-leap ul li {
   list-style: none;
 }
@@ -41,14 +47,14 @@
   z-index: 1002;
 }
 .notify-me-leap .wrapper {
-  margin-top: 50px;
+  margin-top: 0px;
   display: inline-block;
   padding: 15px;
 }
 .notify-me-leap p.logo {
   font-size: 21px;
   color: #2e2e2e;
-  margin: 15px auto;
+  margin: 15px auto !important;
   display: inline-block;
   text-transform: uppercase;
 }

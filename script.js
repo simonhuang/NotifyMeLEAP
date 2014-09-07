@@ -21,6 +21,8 @@ $(document).ready(function(){
     $('body').append('<section id="notifymecontainer" class="notify-me-leap"></section>');
     $('#notifymecontainer.notify-me-leap').html(data);
 
+    $('#notifymecontainer').hide();
+
     loadjscssfile(chrome.extension.getURL("prototype/css/reset.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/css/bootstrap-reset.css"), "css");
@@ -28,7 +30,7 @@ $(document).ready(function(){
     loadjscssfile(chrome.extension.getURL("prototype/css/style.css"), "css");
     loadjscssfile(chrome.extension.getURL("prototype/css/style-responsive.css"), "css");
   });
-  $('#notifymecontainer').hide();
+
 });
 
 var controller = Leap.loop({enableGestures: true}, function(frame){
@@ -45,6 +47,8 @@ var controller = Leap.loop({enableGestures: true}, function(frame){
         } else {
           $('#notifymecontainer').hide({duration:400});
         }
+      }else{
+        $('#notifymecontainer').scrollTop($('#notifymecontainer').scrollTop()-5*gesture.direction[1]*10);
       }
     });
   }
