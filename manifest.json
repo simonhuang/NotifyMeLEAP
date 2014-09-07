@@ -16,7 +16,7 @@
    {
 	   "matches":["*://*/*"],
 	   "run_at":"document_end",
-	   "js":["leap-0.6.2.js","prototype/js/jquery.js","prototype/js/bootstrap.min.js","script.js"]
+	   "js":["leap-0.6.2.js","prototype/js/jquery.js","prototype/js/bootstrap.min.js","prototype/js/google-gmail.js","script.js"]
       }]
 
 }
