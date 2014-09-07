@@ -2,7 +2,7 @@
 {
 	
 "name":"NotifyMeLEAP",
-"version":"0.1",
+"version":"1.0",
 "description":"Notifications for Leap!",
 "manifest_version":2,
 "web_accessible_resources": [
