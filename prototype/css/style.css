@@ -5,6 +5,7 @@
   font-family: 'Open Sans', sans-serif;
   max-width: 350px;
   height: 100%;
+  overflow-x: hidden;
   overflow-y: scroll;
   background: #f1f2f7;
   top:0;
