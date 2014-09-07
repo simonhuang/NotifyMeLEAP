@@ -54,7 +54,7 @@
 .notify-me-leap p.logo {
   font-size: 21px;
   color: #2e2e2e;
-  margin: 15px auto !important;
+  margin: 15px 15px !important;
   display: inline-block;
   text-transform: uppercase;
 }
