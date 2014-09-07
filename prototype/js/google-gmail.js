@@ -6,15 +6,15 @@ function getNews(){
    	console.log(newsfeed.length);
    	console.log (data.response.results.length);
 	var newsString = 
-	            '<section class="panel">' + 
+	            '<section id="accord10" class="panel panel-default">' + 
 	                '<header class="panel-heading">' + 
-	                    'The Guardian News' + 
-	                    '<span class="tools pull-right">' +
-	                      '<a href="javascript:;" class="fa fa-chevron-down"></a>' +
-	                      '<a href="javascript:;" class="fa fa-times"></a>' + 
-	                  '</span>' + 
+	                '<h4 class="panel-title">' + 
+                        '<a href="#collapseMinusOne" data-parent="#accord10" data-toggle="collapse" class="accordion-toggle">' +
+                            'News' +
+                        '</a>' +
+                    '</h4>' +
 	                '</header>' + 
-	                '<div class="panel-body">' +
+	                '<div class="panel-body panel-collapse collapse in" id="collapseMinusOne">' +
 	                    '<table class="table table-hover">' + 
 						 	'<tbody>';
    	for (i = 0; i < data.response.results.length; i++) {
